@@ -1,0 +1,79 @@
+@font-face {
+    font-family: xilla;
+    src: url(resources/Xilla\ Pro\ Bold.otf);
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    font-family: xilla;
+}
+
+body {
+    background-color: azure;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+}
+
+input {
+    width: 100px;
+    height: 30px;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    align-self: flex-end;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#settings {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    align-items: center;
+}
+
+#canvas {
+    align-self: center;
+    min-width: 500px;
+    height: 500px;
+    box-shadow: rgb(000, 000, 000) 0px 0px 5px;
+    display: grid;
+}
+
+#cell {
+    background-color: blueviolet;
+}
