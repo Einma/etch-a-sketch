@@ -1,5 +1,5 @@
 const DEFAULT_SIZE = 8;
-const COLOR = 'black';
+const COLOR = '#0e0e0f';
 
 
 const SLIDER = document.querySelector('#range');
@@ -7,6 +7,7 @@ const CLEAR = document.querySelector('#clear');
 const INPUT_VALUE = document.querySelector('#input-value')
 const RAINBOW_MODE = document.querySelector('#rainbow');
 const BLACK_MODE = document.querySelector('#black');
+const ERASER = document.querySelector('#eraser')
 
 const CANVAS = document.querySelector('#canvas');
 const CELLS = document.querySelectorAll('#cell');
@@ -14,6 +15,7 @@ const CELLS = document.querySelectorAll('#cell');
 
 let rainbow = false;
 let black = true;
+let erase = false;
 
 
 let mouseDown = false
@@ -61,14 +63,27 @@ CLEAR.addEventListener('click', () => {
 RAINBOW_MODE.addEventListener('click', () => {
     rainbow = true;
     black = false;
+    erase = false;
     RAINBOW_MODE.classList.add('active');
     BLACK_MODE.classList.remove('active');
+    ERASER.classList.remove('active');
 })
 BLACK_MODE.addEventListener('click', () => {
     rainbow = false;
     black = true;
+    erase = false;
     RAINBOW_MODE.classList.remove('active');
     BLACK_MODE.classList.add('active');
+    ERASER.classList.remove('active');
+})
+ERASER.addEventListener('click', () => {
+    rainbow = false;
+    black = false;
+    erase = true;
+    ERASER.classList.add('active');
+    BLACK_MODE.classList.remove('active');
+    RAINBOW_MODE.classList.remove('active');
+
 })
 
 
@@ -82,6 +97,8 @@ function coloring() {
                 cell.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
             } else if (rainbow === false && black === true) {
                 cell.style.backgroundColor = `${COLOR}`
+            } else if (rainbow === false && black === false && erase === true) {
+                cell.style.backgroundColor = 'white';
             }
         })
     })
