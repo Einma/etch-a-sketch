@@ -27,6 +27,8 @@ button {
     width: 100px;
     height: 30px;
     font-size: 16px;
+    border-radius: 5px;
+    border: 1px dotted grey;
 }
 
 input {
@@ -75,5 +77,9 @@ main {
 }
 
 #cell {
-    background-color: blueviolet;
+    background-color: white;
+}
+
+.active {
+    background-color: salmon;
 }
